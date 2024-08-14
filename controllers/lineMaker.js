@@ -465,7 +465,8 @@ exports.rejectLineMakerCommerceAdmin= asyncHandler(async (req, res, next) => {
 
   const approveObj={
     bussId:bussId,
-    userId:lineMakerId
+    userId:lineMakerId,
+    remover : req.user.username
   }
   const authObj={
     group:"lineMaker",

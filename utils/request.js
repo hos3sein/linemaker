@@ -189,7 +189,8 @@ exports.findBuss = async (id) => {
   }
 };
 exports.changelineMakerApproveStatus = async (data) => {
-  const url = ` ${process.env.SERVICE_APPROVE}/api/v1/approve/interservice/changeapproveline`;
+    console.log('uel>>>>' ,process.env.SSERVICE_APPROVE )
+  const url = ` ${process.env.SSERVICE_APPROVE}/api/v1/approve/interservice/changeapproveline`;
 
   try {
     const rawResponse = await fetch(url, {
@@ -201,6 +202,7 @@ exports.changelineMakerApproveStatus = async (data) => {
       body: JSON.stringify(data),
     });
     const response = await rawResponse.json();
+    console.log(response)
     if (response.success) {
       return response;
     } else {
