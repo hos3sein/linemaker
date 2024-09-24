@@ -18,6 +18,7 @@ exports.delAll = asyncHandler(async (req, res, next) => {
   }); 
 });
 
+
 exports.all = asyncHandler(async (req, res, next) => {
   const all = await LineMaker.find().populate({
     path: "booking",
@@ -28,6 +29,9 @@ exports.all = asyncHandler(async (req, res, next) => {
     data: all,
   });
 });
+
+
+
 exports.testQr = asyncHandler(async (req, res, next) => {
   await refreshTruckQr()
   res.status(200).json({
